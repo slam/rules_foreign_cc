@@ -97,9 +97,9 @@ mkdir -p ${target}
 
 if [[ -d $1 ]]; then
   local dir_name="$(basename "$1")"
-  ln -s $1 ${target}/${dir_name}
+  ln -sf $1 ${target}/${dir_name}
 elif [[ -f $1 ]]; then
-  ln -s $1 ${target}
+  ln -sf $1 ${target}
 elif [[ -L $1 ]]; then
   cp $1 ${target}
 else
